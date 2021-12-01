@@ -21,6 +21,19 @@ def doFOUR():
     strip.set_matrix_color(1, 2, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(3, 1, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(1, 0, neopixel.colors(NeoPixelColors.ORANGE))
+def doSomething(num: number):
+    if num == 1:
+        doONE()
+    elif num == 2:
+        doTWO()
+    elif num == 3:
+        doTHREE()
+    elif num == 4:
+        doFOUR()
+    elif num == 5:
+        doFIVE()
+    else:
+        strip.clear()
 def doTHREE():
     strip.set_matrix_color(3, 4, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 4, neopixel.colors(NeoPixelColors.ORANGE))
@@ -51,17 +64,3 @@ def doONE():
     strip.set_matrix_color(2, 2, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 3, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 4, neopixel.colors(NeoPixelColors.ORANGE))
-
-def doSomething(num: number):
-    if num == 1:
-        doONE()
-    elif num == 2:
-        doTWO()
-    elif num == 3:
-        doTHREE()
-    elif num == 4:
-        doFOUR()
-    elif num == 5:
-        doFIVE()
-    else:
-        strip.clear()
