@@ -1,3 +1,4 @@
+strip: neopixel.Strip = None
 def doTWO():
     strip.set_matrix_color(3, 4, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 4, neopixel.colors(NeoPixelColors.ORANGE))
@@ -20,19 +21,6 @@ def doFOUR():
     strip.set_matrix_color(1, 2, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(3, 1, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(1, 0, neopixel.colors(NeoPixelColors.ORANGE))
-def doSomething(num: number):
-    if num == 1:
-        doONE()
-    elif num == 2:
-        doTWO()
-    elif num == 3:
-        doTHREE()
-    elif num == 4:
-        doFOUR()
-    elif num == 5:
-        doFIVE()
-    else:
-        strip.clear()
 def doTHREE():
     strip.set_matrix_color(3, 4, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 4, neopixel.colors(NeoPixelColors.ORANGE))
@@ -63,16 +51,17 @@ def doONE():
     strip.set_matrix_color(2, 2, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 3, neopixel.colors(NeoPixelColors.ORANGE))
     strip.set_matrix_color(2, 4, neopixel.colors(NeoPixelColors.ORANGE))
-strip: neopixel.Strip = None
-strip = neopixel.create(DigitalPin.P13, 25, NeoPixelMode.RGB)
-strip.set_matrix_width(5)
-strip.set_brightness(30)
 
-def on_forever():
-    strip.clear()
-    doSomething(1)
-    # strip.rotate(1)
-    strip.show()
-    basic.pause(500)
-basic.forever(on_forever)
-
+def doSomething(num: number):
+    if num == 1:
+        doONE()
+    elif num == 2:
+        doTWO()
+    elif num == 3:
+        doTHREE()
+    elif num == 4:
+        doFOUR()
+    elif num == 5:
+        doFIVE()
+    else:
+        strip.clear()
